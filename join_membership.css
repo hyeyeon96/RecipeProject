@@ -1,0 +1,90 @@
+body{
+    background : url("image/background.jpg") no-repeat center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+}
+
+.container{    
+    border-style : groove;
+    border-color: rgb(158, 69, 37);
+    background-color: white;
+    border-radius: 10px;
+    width : auto
+}
+
+.inner_container{
+    padding : 40px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.join_header .join_title{
+    font-size: 25pt;
+    font-weight: bolder;
+    padding-bottom: 20px;
+}
+
+.detail{
+    padding-top: 10px;
+}
+
+.detail_input {
+    width : 100%;
+    height : 40px;
+    border-radius: 5px;
+}
+
+.inner_container .id_input {
+    position: relative;
+}
+  
+.inner_container .id_input > button {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 5px;
+    margin: auto 0;
+}
+
+.user_gender_input .user_gender{
+    padding : 0 60px 0 0
+}
+
+.birth_box{
+    width : 30%;
+    size: auto;
+    height : 40px;
+    border-radius: 5px;
+}
+#birth-year{
+    margin-right: 1%;
+}
+#birth-month{
+    margin-right: 1%;
+    margin-left: 1%;
+}
+#birth-day{
+    margin-left: 1%;
+}
+
+button{
+    background-color : rgb(158, 69, 37);
+    border-radius: 5px;
+    border: none;
+    width : 100px;
+    height : 35px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 12pt;
+    color : white;    
+}
+
+.join_btn{
+    padding : 40px 0 0 0;
+    text-align: center;
+}
+
+.form_w200{
+    border-radius: 5px;
+    height : 40px;
+}
+

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
+    <link rel = "stylesheet" href="join_membership.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+</head>
+<body>
+    <div class="container">
+        <div class="inner_container">
+            <div class="join_header">
+                <div class="join_title">
+                    회원가입
+                </div>
+                
+            </div>
+            <div class="join_main">
+                <div class="detail id_main">
+                    <div class="id_title">
+                        <div class="title">아이디</div>                        
+                    </div>
+                    <div class="id_input">
+                        <input type="text" name="user_id" class="detail_input" placeholder="아이디 입력(6~20자)" check_result="fail" required/>
+                        <button type="button" class="id_overlap_button" onclick="id_overlap_check()">중복 확인</button>
+                    </div>
+                </div>
+            
+            
+                <div class="pw_main">
+                    <div class="detail pw_title">
+                        <div class="title">비밀번호</div>
+                    </div>
+                    <div class="pw_input">
+                        <input type="password" name="user_pw" class="detail_input" placeholder="비밀번호 입력(문자, 숫자, 특수문자 포함 8~20자)" minlength='8' maxlength='20'>
+                    </div>
+                    <div class="detail pw_check_title">
+                        <div class="title">비밀번호 확인</div>
+                    </div>
+                    <div class="pw_check_input">
+                        <input type="password" name="user_pw_check" class="detail_input" placeholder="비밀번호 재입력" minlength='8' maxlength='20'>
+                    </div>
+                </div>
+            
+            
+                <div class="detail user_name_main">
+                    <div class="user_name_title">
+                        <div class="title">이름</div>
+                    </div>
+                    <div class="user_name_input">
+                        <input type="text" name="user_name" class="detail_input" placeholder="이름을 입력해주세요">
+                    </div>
+                </div>
+            
+            
+                <div class="detail user_birth_main">
+                    <div class="user_birth_title">
+                        <div class="title">생년월일</div>
+                    </div>
+                    <div class="detail_input user_birth_input">
+                        <span>
+                            <input type="text" name="yyyy" class="birth_box" id="birth-year" placeholder="yyyy">                            
+                        </span>
+                        <span>
+                            <input type="text" name="mm" class="birth_box" id="birth-month" placeholder="mm"> 
+                        </span>
+                        <span>
+                            <input type="text" name="dd" class="birth_box" id="birth-day" placeholder="dd">
+                        </span>                        
+                        
+                    </div>
+                </div>
+            
+            
+                <div class="detail user_gender_main">
+                    <div class="user_gender_title">
+                        <div class="title">성별</div>
+                    </div>
+                    <div class="detail_input user_gender_input">
+                        <span class = "user_gender">
+                            <input type="radio" name="chk_info" value="남">남자
+                        </span>                        
+                        <span class = "user_gender">
+                            <input type="radio" name="chk_info" value="여자">여자
+                        </span>
+                        <span class = "user_gender">
+                            <input type="radio" name="chk_info" value="선택안함"  checked="checked">선택안함
+                        </span>                        
+                    </div>
+                </div>
+            
+            
+                <div class="detail user_phone_main">
+                    <div class="user_phone_title">
+                        <div class="title">전화번호</div>
+                    </div>
+                    <div class="user_phone_input">
+                        <input type="tel" name="user_phone" class="detail_input" placeholder="휴대폰 번호 입력('-'제외 11자리 입력)">
+                    </div>
+                </div>
+            
+            
+                <div class="detail user_email_main">
+                    <div class="user_email_title">
+                        <div class="title">이메일</div>
+                    </div>
+                    <div class="detail_input user_email_input">
+                        <input type="text" id="email_id" class="form_w200" value="" title="이메일 아이디" placeholder="이메일" maxlength="20" /> @ 
+                            <input type="text" id="email_domain" class="form_w200" value="" title="이메일 도메인" placeholder="이메일 도메인" maxlength="18"/> 
+                            <span>
+                                <select class="form_w200" title="이메일 도메인 주소 선택" onclick="setEmailDomain(this.value);return false;">
+                                    <option value="type">직접입력</option>
+                                    <option value="naver.com">naver.com</option>
+                                    <option value="gmail.com">gmail.com</option>
+                                    <option value="hanmail.net">daum.net</option>
+                                    <option value="nate.com">nate.com</option>
+                                    <option value="yahoo.com">yahoo.com</option>
+                                </select>
+                            </span>
+                    </div>
+                </div>                
+                
+                <div class="join_btn">
+                    <button type="button" class="join_button" >가입 완료</button>
+                </div>
+            </div>            
+        </div>
+    </div>
+    
+</body>
+</html>

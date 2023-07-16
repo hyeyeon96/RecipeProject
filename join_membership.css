@@ -18,10 +18,15 @@ body{
     font-family: 'Noto Sans KR', sans-serif;
 }
 
-.join_header .join_title{
+.join_title{
     font-size: 25pt;
     font-weight: bolder;
     padding-bottom: 20px;
+}
+
+.inner_container .text_content{
+    color : red;
+    padding-left: 10px;
 }
 
 .detail{
@@ -39,6 +44,18 @@ body{
 }
   
 .inner_container .id_input > button {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 5px;
+    margin: auto 0;
+}
+
+.inner_container .pw_check_input {
+    position: relative;
+}
+
+.inner_container .pw_check_input > button {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -71,7 +88,7 @@ button{
     background-color : rgb(158, 69, 37);
     border-radius: 5px;
     border: none;
-    width : 100px;
+    width : 120px;
     height : 35px;
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 12pt;

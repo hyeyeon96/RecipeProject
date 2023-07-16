@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
     <link rel = "stylesheet" href="join_membership.css">
+    <!-- <script src="join_membership.js"> </script> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>회원가입</title>
 </head>
@@ -19,10 +20,11 @@
             <div class="join_main">
                 <div class="detail id_main">
                     <div class="id_title">
-                        <div class="title">아이디</div>                        
+                        <span class="title">아이디</span>
+                        <span class = "text_content" id="user_id-validation"></span>                        
                     </div>
                     <div class="id_input">
-                        <input type="text" name="user_id" class="detail_input" placeholder="아이디 입력(6~20자)" check_result="fail" required/>
+                        <input type="text" id="user_id" name="user_id" class="detail_input" placeholder="아이디 입력(6~20자)" minlength='6' maxlength='20'>
                         <button type="button" class="id_overlap_button" onclick="id_overlap_check()">중복 확인</button>
                     </div>
                 </div>
@@ -30,23 +32,26 @@
             
                 <div class="pw_main">
                     <div class="detail pw_title">
-                        <div class="title">비밀번호</div>
+                        <span class="title">비밀번호</span>
+                        <span class = "text_content" id="user_pw-validation"></span>  
                     </div>
                     <div class="pw_input">
-                        <input type="password" name="user_pw" class="detail_input" placeholder="비밀번호 입력(문자, 숫자, 특수문자 포함 8~20자)" minlength='8' maxlength='20'>
+                        <input type="password" name="user_pw" id="user_pw" class="detail_input" placeholder="비밀번호 입력(문자, 숫자, 특수문자 포함 8~12자)" minlength='8' maxlength='12'>
                     </div>
                     <div class="detail pw_check_title">
-                        <div class="title">비밀번호 확인</div>
+                        <span class="title">비밀번호 확인</span>
+                        <span class = "text_content" id="pw_same-validation"></span>  
                     </div>
                     <div class="pw_check_input">
-                        <input type="password" name="user_pw_check" class="detail_input" placeholder="비밀번호 재입력" minlength='8' maxlength='20'>
+                        <input type="password" name="user_pw_check" id="user_pw_check" class="detail_input" placeholder="비밀번호 재입력" minlength='8' maxlength='12'>
                     </div>
                 </div>
             
             
                 <div class="detail user_name_main">
                     <div class="user_name_title">
-                        <div class="title">이름</div>
+                        <span class="title">이름</span>
+                        <span class = "text_content" id="user_name-validation"></span>  
                     </div>
                     <div class="user_name_input">
                         <input type="text" name="user_name" class="detail_input" placeholder="이름을 입력해주세요">
@@ -122,11 +127,12 @@
                 </div>                
                 
                 <div class="join_btn">
-                    <button type="button" class="join_button" >가입 완료</button>
+                    <button type="button" class="join_button" onclick="samePw_Check()">가입 완료</button>
                 </div>
             </div>            
         </div>
     </div>
     
 </body>
+<script src="join_membership.js"> </script>
 </html>

@@ -40,7 +40,7 @@ function validateUserId(){
 }
 
 function id_overlap_check(){
-    
+    //아직 백앤드랑 연동을 못함
 }
 
 // ==========비밀번호 유효성 검사===========
@@ -242,5 +242,33 @@ function PhoneCheck() {
 
 //==============이메일 유효성 검사==================
 
+const userEmailCheckInput = document.getElementById("email_id");
+const userEmailCheckValidation = document.getElementById("user_email-validation");
 
+userEmailCheckInput.addEventListener('input', EmailCheck);
 
+function EmailCheck(){
+
+    var email = userEmailCheckInput.value;
+    var regEmail =  /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+
+    if (regEmail.test(email)==true){
+        userEmailCheckValidation.textContent = ''
+        return true;
+    }else{
+        userEmailCheckValidation.textContent = '이메일 형식이 알맞지 않습니다.'
+        return false;
+    }
+}
+
+//==============가입완료 버튼==================
+
+function JoinCommit(){
+    if(validateUserId() == false || validateUserPw() == false || PwCheck() == false 
+    || NameCheck() == false || BirthCheck() == false || PhoneCheck() == false || EmailCheck() == false){
+        alert("입력방식이 올바르지 않은 형식이 있습니다.");
+        return false
+    }else{
+        return true
+    }
+}

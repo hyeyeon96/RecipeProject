@@ -112,26 +112,16 @@
             
                 <div class="detail user_email_main">
                     <div class="user_email_title">
-                        <div class="title">이메일</div>
+                        <span class="title">이메일</span>
+                        <span class="text_content" id="user_email-validation"></span>
                     </div>
                     <div class="detail_input user_email_input">
-                        <input type="text" id="email_id" class="form_w200" value="" title="이메일 아이디" placeholder="이메일" maxlength="20" /> @ 
-                            <input type="text" id="email_domain" class="form_w200" value="" title="이메일 도메인" placeholder="이메일 도메인" maxlength="18"/> 
-                            <span>
-                                <select class="form_w200" title="이메일 도메인 주소 선택" onclick="setEmailDomain(this.value);return false;">
-                                    <option value="type">직접입력</option>
-                                    <option value="naver.com">naver.com</option>
-                                    <option value="gmail.com">gmail.com</option>
-                                    <option value="hanmail.net">daum.net</option>
-                                    <option value="nate.com">nate.com</option>
-                                    <option value="yahoo.com">yahoo.com</option>
-                                </select>
-                            </span>
+                        <input type="email" id="email_id" class="form_w200" value="" title="이메일 아이디" placeholder="이메일"/>
                     </div>
                 </div>                
                 
                 <div class="join_btn">
-                    <button type="button" class="join_button" onclick="samePw_Check()">가입 완료</button>
+                    <button type="button" class="join_button" onclick="JoinCommit()">가입 완료</button>
                 </div>
             </div>            
         </div>

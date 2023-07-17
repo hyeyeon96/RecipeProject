@@ -91,10 +91,10 @@ function PwCheck(){
 
     if(pw1 == false){
         userPwCheckValidation.textContent = '비밀번호를 먼저 입력하세요.'
-        return true;        
+        return false;        
     }else if(pw1 == pw2){
         userPwCheckValidation.textContent = '비밀번호가 일치합니다.'
-        return false;    
+        return true;    
     }else{
         userPwCheckValidation.textContent = '비밀번호가 일치하지 않습니다.'
         return false;

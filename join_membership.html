@@ -54,26 +54,29 @@
                         <span class = "text_content" id="user_name-validation"></span>  
                     </div>
                     <div class="user_name_input">
-                        <input type="text" name="user_name" class="detail_input" placeholder="이름을 입력해주세요">
+                        <input type="text" name="user_name" id="user_name" class="detail_input" placeholder="이름을 입력해주세요">
                     </div>
                 </div>
             
             
                 <div class="detail user_birth_main">
                     <div class="user_birth_title">
-                        <div class="title">생년월일</div>
+                        <span class="title">생년월일</span>
+                        <span class = "text_content" id="user_birth-validation"></span>  
                     </div>
                     <div class="detail_input user_birth_input">
                         <span>
-                            <input type="text" name="yyyy" class="birth_box" id="birth-year" placeholder="yyyy">                            
+                            <input type="text" name="yyyy" class="birth_box" id="birth-year" placeholder="yyyy" maxlength="4" minlength="4" 
+                                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">                            
                         </span>
                         <span>
-                            <input type="text" name="mm" class="birth_box" id="birth-month" placeholder="mm"> 
+                            <input type="text" name="mm" class="birth_box" id="birth-month" placeholder="mm" maxlength="2" minlength="2" 
+                                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"> 
                         </span>
                         <span>
-                            <input type="text" name="dd" class="birth_box" id="birth-day" placeholder="dd">
+                            <input type="text" name="dd" class="birth_box" id="birth-day" placeholder="dd" maxlength="2" minlength="2" 
+                                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
                         </span>                        
-                        
                     </div>
                 </div>
             
@@ -98,10 +101,11 @@
             
                 <div class="detail user_phone_main">
                     <div class="user_phone_title">
-                        <div class="title">전화번호</div>
-                    </div>
+                        <span class="title">전화번호</span>
+                        <span class="text_content" id="user_phone-validation"></span>
+                    </div>                    
                     <div class="user_phone_input">
-                        <input type="tel" name="user_phone" class="detail_input" placeholder="휴대폰 번호 입력('-'제외 11자리 입력)">
+                        <input type="tel" name="user_phone" class="detail_input" id="user_phone"placeholder="휴대폰 번호 입력(000-0000-0000)">
                     </div>
                 </div>
             

@@ -103,4 +103,144 @@ function PwCheck(){
 
 // ===============이름 입력================
 
-const userNameInput = document.getElementById("user_pw_check");
+const userNameCheckInput = document.getElementById("user_name");
+const userNameCheckValidation = document.getElementById("user_name-validation");
+userNameCheckInput.addEventListener('input', NameCheck);
+
+function NameCheck(){
+
+    var name = userNameCheckInput.value
+    
+    if(name == null){
+        userNameCheckValidation.textContent = '이름을 입력하세요'
+        return false;
+    } else{
+        userNameCheckValidation.textContent = ''
+        return true;
+    }
+}
+
+// ===============생일 입력===================
+
+//년도 입력
+
+const userYearCheckInput = document.getElementById("birth-year");
+const userMonthCheckInput = document.getElementById("birth-month");
+const userDayCheckInput = document.getElementById("birth-day");
+const userBirthCheckValidation = document.getElementById("user_birth-validation");
+
+userYearCheckInput.addEventListener('input', BirthCheck);
+userMonthCheckInput.addEventListener('input', BirthCheck);
+userDayCheckInput.addEventListener('input', BirthCheck);
+
+function BirthCheck(){
+
+    var year = userYearCheckInput.value
+    var month = userMonthCheckInput.value
+    var day = userDayCheckInput.value
+
+    //년도 조건
+    function YearCheck(){
+        if(year.length != 4){
+            userBirthCheckValidation.textContent = '년도는 4자리 입니다'
+            return false;
+        }else if(year < 1920 || year > 2023){
+            userBirthCheckValidation.textContent = '1920년과 2023년 사이여야 합니다.'
+            return false;
+        }else{
+            userBirthCheckValidation.textContent = ''
+            return true;
+        }
+    }
+
+    //월 조건
+    function MonthCheck(){
+        if(month.length != 2){
+            userBirthCheckValidation.textContent = '월은 2자리 입니다 ex) 1월의 경우 01이라고 입력해주세요'
+            return false;
+        }else if(month < 1 || month > 12){
+            userBirthCheckValidation.textContent = '01월과 12월 사이여야 합니다.'
+            return false;
+        }else{
+            userBirthCheckValidation.textContent = ''
+            return true;
+        }
+    }
+
+    //일 조건
+    function DayCheck(){
+        if(day.length != 2){
+            userBirthCheckValidation.textContent = '일은 2자리 입니다 ex) 1일의 경우 01이라고 입력해주세요'
+            return false;
+        }else if(day < 1 || day > 31){
+            userBirthCheckValidation.textContent = '01일과 31일 사이여야 합니다.'
+            return false;
+        }else{
+            userBirthCheckValidation.textContent = ''
+            return true;
+        }
+    }
+
+    //윤년과 30일 달
+    function Month_DayCheck(){
+        if (month == 2 ){
+            if (year%4 == 0){
+                if (day > 29){
+                    userBirthCheckValidation.textContent = '해당년도의 2월은 29일까지 입니다.'
+                    return false
+                }else {
+                    userBirthCheckValidation.textContent = ''
+                    return true
+                }
+            }else{
+                if (day > 28){
+                    userBirthCheckValidation.textContent = '해당년도의 2월은 28일까지 입니다.'
+                    return false
+                }else {
+                    userBirthCheckValidation.textContent = ''
+                    return true
+                }
+            }
+        }else if (month == 4, 6, 9, 11){
+            if (day > 30){
+                userBirthCheckValidation.textContent = '해당월은 30일까지 입니다.'
+                return false
+            }else {
+                userBirthCheckValidation.textContent = ''
+                return true
+            }
+        }
+    }
+
+    if(YearCheck()==false || MonthCheck()==false || DayCheck()==false || Month_DayCheck()==false){
+        return false
+    }else{
+        return true
+    }    
+}
+
+//==============전화번호 입력================
+
+const userPhoneCheckInput = document.getElementById("user_phone");
+const userPhoneCheckValidation = document.getElementById("user_phone-validation");
+
+userPhoneCheckInput.addEventListener('input', PhoneCheck);
+
+function PhoneCheck() {
+    var phone = userPhoneCheckInput.value;  
+    var regPhone= /^01([0|1|6|7|8|9])-([0-9]{3,4})-([0-9]{4})$/;
+  
+    if (regPhone.test(phone) == true) {
+        userPhoneCheckValidation.textContent = ''
+        return true;
+  
+    }else{
+        userPhoneCheckValidation.textContent = '형식이 알맞지 않습니다.'
+        return false;
+    }  
+}
+
+//==============이메일 유효성 검사==================
+
+
+
